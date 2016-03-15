@@ -18,11 +18,18 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('ice_recaptcha');
+        $rootNode = $treeBuilder->root('pv_recaptcha');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
         // more information on that topic.
+
+        $rootNode
+            ->children()
+            ->scalarNode('recaptcha_public_key')->end()
+            ->scalarNode('recaptcha_private_key')->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }

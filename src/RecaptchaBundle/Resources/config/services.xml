@@ -7,21 +7,19 @@
     <parameters>
         <parameter key="pv.form.type.recaptcha.class">PV\RecaptchaBundle\Form\Type\ReCaptchaType</parameter>
         <parameter key="pv.form.validator.recaptcha.class">PV\RecaptchaBundle\Validator\ReCaptchaValidator</parameter>
-        <parameter key="recaptcha_public_key">6Le-RwsTAAAAAEJ3RUsKeWrVmoeFijtVdG-qWcIA</parameter>
-        <parameter key="recaptcha_private_key">6Le-RwsTAAAAAHV4ywFjgTD2c41tUZ6hrNaiyXcg</parameter>
     </parameters>
 
     <services>
         <service id="pv.form.type.recaptcha" class="%pv.form.type.recaptcha.class%">
-            <tag name="form.type" alias="ice_recaptcha" />
-            <argument>%recaptcha_public_key%</argument>
+            <tag name="form.type" alias="pv_recaptcha" />
+            <argument>%pv_recaptcha.recaptcha_public_key%</argument>
             <argument>%locale%</argument>
         </service>
 
         <service id="pv.form.validator.recaptcha" class="%pv.form.validator.recaptcha.class%">
-            <tag name="validator.constraint_validator" alias="ice_recaptcha_validator" />
+            <tag name="validator.constraint_validator" alias="pv_recaptcha_validator" />
             <argument type="service" id="request" strict="false"/>
-            <argument>%recaptcha_private_key%</argument>
+            <argument>%pv_recaptcha.recaptcha_private_key%</argument>
         </service>
     </services>
 </container>

@@ -25,6 +25,8 @@ class IceRecaptchaExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
+        $container->setParameter('pv_recaptcha.recaptcha_public_key', $config['recaptcha_public_key']);
+        $container->setParameter('pv_recaptcha.recaptcha_private_key', $config['recaptcha_private_key']);
     }
 
 

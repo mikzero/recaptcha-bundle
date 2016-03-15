@@ -10,7 +10,7 @@
 
 namespace PV\RecaptchaBundle\Form\Type;
 
-use Ice\RecaptchaBundle\Validator\ReCaptchaConstraint;
+use PV\RecaptchaBundle\Validator\ReCaptchaConstraint;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Exception\InvalidConfigurationException;
 use Symfony\Component\Form\FormView;
@@ -79,6 +79,6 @@ class ReCaptchaType extends AbstractType
      */
     public function getName()
     {
-        return 'ice_recaptcha';
+        return 'pv_recaptcha';
     }
 }
