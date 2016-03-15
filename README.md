@@ -60,7 +60,11 @@ public function buildForm(FormBuilderInterface $builder, array $options)
 ```
 Then, display the widget in your twig view like
 ```twig
-    {{ form_label(forma.recaptcha) }}
+    {{ form_label(form.recaptcha) }}
     {{ form_widget(form.recaptcha) }}
     {{ form_errors(form.recaptcha) }}
 ```
+
+## TODO
+* Publish the Bundle into packagist and create a tag
+* All translations
