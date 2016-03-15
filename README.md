@@ -5,8 +5,10 @@ It provides a form type to include in your forms and a specific validator.
 
 ## Installation
 
-This bundle is not hosted by Packagist yet.
-It will be soon.
+Install with composer :
+```bash
+composer require pierre-vassoilles/recaptcha-bundle
+```
 
 ### Enable the bundle in your project
 
