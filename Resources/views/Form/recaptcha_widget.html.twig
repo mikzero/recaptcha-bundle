@@ -1,7 +1,9 @@
-{% block ice_recaptcha_widget %}
+{% block pv_recaptcha_widget %}
     {% spaceless %}
-        <p>Pour valider le formulaire, veuillez cocher la case ci-dessous.</p>
+        {% if label == false %}
+            <p>{{ 'recaptcha.widget-label'|trans({}, "PvRecaptchaBundle") }}</p>
+        {% endif %}
         <div class="g-recaptcha" data-sitekey="{{ public_key }}"></div>
         <script src="{{ js_api_url }}?lang={{ lang }}" async defer></script>
     {% endspaceless %}
-{% endblock ice_recaptcha_widget %}
+{% endblock pv_recaptcha_widget %}

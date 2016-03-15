@@ -21,7 +21,7 @@ use Symfony\Component\Validator\Constraint;
 class ReCaptchaConstraint extends Constraint
 {
 	/** @var string */
-	public $message = 'Veuillez prouver que nous n\'êtes pas un robot';
+	public $message = 'recaptcha.error-message';
 
 	/** @return string */
 	public function validatedBy()

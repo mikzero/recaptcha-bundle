@@ -1,0 +1,3 @@
+recaptcha:
+  widget-label: 'Pour valider le formulaire, veuillez cocher la case ci-dessous.'
+  error-message: 'Veuillez prouver que nous n''êtes pas un robot'
