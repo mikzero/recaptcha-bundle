@@ -1,0 +1,9 @@
+{% block pv_recaptcha_widget %}
+    {% spaceless %}
+        {% if label == false %}
+            <p>{{ 'recaptcha.widget-label'|trans({}, "PvRecaptchaBundle") }}</p>
+        {% endif %}
+        <div class="g-recaptcha" data-sitekey="{{ public_key }}"></div>
+        <script src="{{ js_api_url }}?lang={{ lang }}" async defer></script>
+    {% endspaceless %}
+{% endblock pv_recaptcha_widget %}
