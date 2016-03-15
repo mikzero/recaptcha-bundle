@@ -10,7 +10,7 @@
 
 namespace Pv\RecaptchaBundle\Form\Type;
 
-use PV\RecaptchaBundle\Validator\ReCaptchaConstraint;
+use Pv\RecaptchaBundle\Validator\ReCaptchaConstraint;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Exception\InvalidConfigurationException;
 use Symfony\Component\Form\FormView;

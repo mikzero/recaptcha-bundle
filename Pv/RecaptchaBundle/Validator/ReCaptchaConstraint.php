@@ -8,7 +8,7 @@
 * file that was distributed with this source code.
 */
 
-namespace PV\RecaptchaBundle\Validator;
+namespace Pv\RecaptchaBundle\Validator;
 
 use Symfony\Component\Validator\Constraint;
 
