@@ -5,8 +5,8 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="pv.form.type.recaptcha.class">PV\RecaptchaBundle\Form\Type\ReCaptchaType</parameter>
-        <parameter key="pv.form.validator.recaptcha.class">PV\RecaptchaBundle\Validator\ReCaptchaValidator</parameter>
+        <parameter key="pv.form.type.recaptcha.class">Pv\RecaptchaBundle\Form\Type\ReCaptchaType</parameter>
+        <parameter key="pv.form.validator.recaptcha.class">Pv\RecaptchaBundle\Validator\ReCaptchaValidator</parameter>
     </parameters>
 
     <services>

@@ -18,7 +18,7 @@
     "doctrine/doctrine-bundle":         "*"
   },
   "autoload": {
-    "psr-0": { "PV\\RecaptchaBundle": "" }
+    "psr-0": { "Pv\\RecaptchaBundle": "" }
   },
   "target-dir": ""
 }
