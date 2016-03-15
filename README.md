@@ -16,7 +16,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new PV\RecaptchaBundle\PVRecaptchaBundle(),
+        new Pv\RecaptchaBundle\PvRecaptchaBundle(),
         // ...
     );
 }
@@ -33,11 +33,11 @@ twig:
     form:
         resources:
             # ...
-            - 'PVRecaptchaBundle:Form:recaptcha_widget.html.twig'
+            - 'PvRecaptchaBundle:Form:recaptcha_widget.html.twig'
             # ...
 
 # Recaptcha Configuration
-ice_recaptcha:
+pv_recaptcha:
     recaptcha_public_key: 'your-public-key'
     recaptcha_private_key: 'your-private-key'
 ```
@@ -51,7 +51,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
     $builder
         // ...
         ->add('recaptcha', 'pv_recaptcha', array(
-            'label' => 'Your label'
+            'label' => 'Your label',
             'mapped' => false,
         ))
         // ...
@@ -66,5 +66,4 @@ Then, display the widget in your twig view like
 ```
 
 ## TODO
-* Publish the Bundle into packagist and create a tag
-* All translations
+* Create a tag
