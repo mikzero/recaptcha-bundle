@@ -21,11 +21,11 @@ use Symfony\Component\Validator\Constraint;
 class ReCaptchaConstraint extends Constraint
 {
 	/** @var string */
-	public $message = 'recaptcha.error-message';
+	public $message = 'Veuillez prouver que nous n\'êtes pas un robot';
 
 	/** @return string */
 	public function validatedBy()
 	{
-		return 'ice_recaptcha_validator';
+		return 'pv_recaptcha_validator';
 	}
 }
