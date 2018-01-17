@@ -46,6 +46,8 @@ pv_recaptcha:
 
 ## Usage
 
+### Recaptcha V2
+
 Add the following code to your form class :
 ```php
 public function buildForm(FormBuilderInterface $builder, array $options)
@@ -65,6 +67,25 @@ Then, display the widget in your twig view like
     {{ form_label(form.recaptcha) }}
     {{ form_widget(form.recaptcha) }}
     {{ form_errors(form.recaptcha) }}
+```
+
+### Invisible Recaptcha
+
+Add the following code to your form class :
+```php
+public function buildForm(FormBuilderInterface $builder, array $options)
+{
+    $builder
+        // ...
+        ->add('recaptcha', 'pv_recaptcha', array(
+            'label' => false,
+            'mapped' => false,
+            'invisible' => true,
+            'form_id' => 'your-form-element-id'
+        ))
+        // ...
+    ;
+}
 ```
 
 ## TODO

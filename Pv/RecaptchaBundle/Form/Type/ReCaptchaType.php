@@ -26,42 +26,44 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
  */
 class ReCaptchaType extends AbstractType
 {
-	const JS_API_URL = 'https://www.google.com/recaptcha/api.js';
+    const JS_API_URL = 'https://www.google.com/recaptcha/api.js';
 
-	/** @var  string */
+    /** @var  string */
     protected $publicKey;
-	/** @var  string */
-	protected $locale;
 
-	public function __construct($publicKey, $locale = null)
-	{
-		if(null === $publicKey)
-		{
+    /** @var  string */
+    protected $locale;
+
+    public function __construct($publicKey, $locale = null)
+    {
+        if (null === $publicKey) {
             throw new InvalidConfigurationException('The parameters "public_key" must be configured.');
         }
 
-		$this->publicKey = $publicKey;
+        $this->publicKey = $publicKey;
 
-		if(null !== $locale)
-		{
-			$this->locale = $locale;
-		}
-		else
-		{
-			$this->locale = Locale::getDefault();
-		}
-	}
+        if (null !== $locale) {
+            $this->locale = $locale;
+        } else {
+            $this->locale = Locale::getDefault();
+        }
+    }
 
     /**
      * {@inheritdoc}
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
-            'public_key' => $this->publicKey,
-			'lang' => $this->locale,
-			'js_api_url' => self::JS_API_URL
-        ));
+        $view->vars = array_replace(
+            $view->vars,
+            array(
+                'public_key'        => $this->publicKey,
+                'lang'              => $this->locale,
+                'js_api_url'        => self::JS_API_URL,
+                'captcha_invisible' => $options['invisible'],
+                'form_id'           => $options['form_id'],
+            )
+        );
     }
 
     /**
@@ -69,9 +71,20 @@ class ReCaptchaType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-		$resolver->setDefaults(array(
-			'constraints' => array(new ReCaptchaConstraint())
-		));
+        $resolver
+            ->setDefaults(
+                array(
+                    'constraints'      => array(new ReCaptchaConstraint()),
+                    'invisible'        => false,
+                    'form_id'          => '',
+                )
+            )
+            ->addAllowedTypes(
+                array(
+                    'invisible'        => 'boolean',
+                    'form_id'          => 'string',
+                )
+            );
     }
 
     /**
