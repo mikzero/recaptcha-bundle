@@ -19,11 +19,19 @@
                 });
 
                 function formSubmit(response) {
+
                     document.getElementById('{{ form_id }}').submit();
+
                 }
             </script>
         {% else %}
-            <div class="g-recaptcha" data-sitekey="{{ public_key }}"></div>
+            <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="{{ public_key }}"></div>
+            <script type="text/javascript">
+                    function recaptchaCallback(response){
+                        console.log('dd')
+                        $('#submitBtn').removeAttr('disabled');
+                    }
+            </script>
         {% endif %}
 
         <script src="{{ js_api_url }}?lang={{ lang }}" async defer></script>
